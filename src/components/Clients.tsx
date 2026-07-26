@@ -17,11 +17,11 @@ function StatItem({
     <div
       className={`reveal reveal-delay-${index + 1} ${start ? 'is-visible' : ''} text-center`}
     >
-      <div className="font-display text-5xl lg:text-6xl text-leaf-500 font-light">
+      <div className="font-serif text-4xl lg:text-5xl text-clay-300">
         {count}
         {stat.suffix}
       </div>
-      <div className="text-sm text-muted mt-2 font-light">{stat.label}</div>
+      <div className="text-sm text-stone-400 mt-2">{stat.label}</div>
     </div>
   );
 }
@@ -30,16 +30,16 @@ export function Clients() {
   const { ref, visible } = useReveal<HTMLDivElement>();
 
   return (
-    <section id="kunden" className="py-28 lg:py-36 bg-sage-50 relative">
+    <section id="kunden" className="py-24 lg:py-32 bg-stone-900/40">
       <div className="max-w-7xl mx-auto px-6">
         <div
           ref={ref}
           className={`reveal ${visible ? 'is-visible' : ''} text-center mb-16`}
         >
-          <p className="text-leaf-500 text-sm uppercase tracking-[0.2em] mb-5">
+          <p className="text-clay-400 text-sm uppercase tracking-wider mb-4">
             Kunden & Referenzen
           </p>
-          <h2 className="font-display text-4xl lg:text-5xl text-moss-800 font-light max-w-2xl mx-auto leading-[1.15] text-balance">
+          <h2 className="font-serif text-3xl lg:text-4xl text-stone-100 max-w-2xl mx-auto leading-tight">
             Organisationen, die mir vertraut haben
           </h2>
         </div>
@@ -54,7 +54,7 @@ export function Clients() {
           {clients.map((client) => (
             <div
               key={client}
-              className="text-center text-sm text-muted hover:text-leaf-500 transition-colors duration-300 py-3 px-2 border border-sage-200 rounded-lg bg-paper-50 font-light"
+              className="text-center text-sm text-stone-500 hover:text-stone-300 transition-colors py-3 px-2 border border-stone-800/50 rounded-lg bg-stone-950/40"
             >
               {client}
             </div>
