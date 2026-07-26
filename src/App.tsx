@@ -8,19 +8,27 @@ import { Testimonials } from '@/components/Testimonials';
 import { Philosophy } from '@/components/Philosophy';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
+import { ResonanceLine } from '@/components/ResonanceLine';
 
 function App() {
   return (
-    <div className="min-h-screen bg-stone-950">
+    <div className="min-h-screen bg-ink-950">
       <Header />
       <main>
         <Hero />
+        <ResonanceLine />
         <About />
+        <ResonanceLine />
         <Strengths />
+        <ResonanceLine />
         <Offers />
+        <ResonanceLine />
         <Clients />
+        <ResonanceLine />
         <Testimonials />
+        <ResonanceLine />
         <Philosophy />
+        <ResonanceLine />
         <Contact />
       </main>
       <Footer />
