@@ -64,41 +64,42 @@ export function Contact() {
   };
 
   return (
-    <section id="kontakt" className="py-28 lg:py-36 bg-ink-900/40">
+    <section id="kontakt" className="py-24 lg:py-32 bg-stone-900/40">
       <div className="max-w-7xl mx-auto px-6">
         <div
           ref={ref}
           className={`reveal ${visible ? 'is-visible' : ''} text-center mb-16`}
         >
-          <p className="text-ocher text-xs tracking-[0.2em] uppercase mb-4">
+          <p className="text-clay-400 text-sm uppercase tracking-wider mb-4">
             Kontakt
           </p>
-          <h2 className="font-display text-3xl lg:text-4xl text-bone-100 max-w-2xl mx-auto leading-tight tracking-tightest font-medium">
+          <h2 className="font-serif text-3xl lg:text-4xl text-stone-100 max-w-2xl mx-auto leading-tight">
             Lernen wir uns kennen
           </h2>
-          <p className="text-muted-300 mt-4 max-w-xl mx-auto">
+          <p className="text-stone-400 mt-4 max-w-xl mx-auto">
             Vereinbaren Sie ein kostenloses Kennenlerngespräch oder schreiben Sie
             mir direkt. Ich freue mich auf Ihre Nachricht.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-12">
           {/* Booking widget */}
           <div>
-            <h3 className="font-display text-lg text-bone-100 mb-2 tracking-tightest font-medium">
+            <h3 className="font-serif text-xl text-stone-100 mb-2 flex items-center gap-2">
+              <Calendar size={20} className="text-clay-400" />
               Terminanfrage
             </h3>
-            <p className="text-sm text-muted-400 mb-6">
+            <p className="text-sm text-stone-500 mb-6">
               Wählen Sie einen freien Slot. Ich bestätige den Termin per E-Mail.
             </p>
 
             {bookingSent ? (
-              <div className="border border-ocher/30 bg-ink-950/60 p-8 text-center">
-                <CheckCircle2 className="text-ocher mx-auto mb-4" size={32} />
-                <p className="text-bone-100 font-medium">
+              <div className="bg-sage-950/40 border border-sage-800/50 rounded-xl p-8 text-center">
+                <CheckCircle2 className="text-sage-400 mx-auto mb-4" size={40} />
+                <p className="text-stone-200 font-medium">
                   Terminanfrage gesendet!
                 </p>
-                <p className="text-sm text-muted-300 mt-2">
+                <p className="text-sm text-stone-400 mt-2">
                   Melanie meldet sich innerhalb von 48 Stunden zur Bestätigung.
                 </p>
                 <button
@@ -106,7 +107,7 @@ export function Contact() {
                     setBookingSent(false);
                     setSelectedSlot(null);
                   }}
-                  className="mt-6 text-sm text-ocher hover:text-ocher/80 transition-colors"
+                  className="mt-6 text-sm text-clay-400 hover:text-clay-300 transition-colors"
                 >
                   Neue Anfrage stellen
                 </button>
@@ -116,13 +117,13 @@ export function Contact() {
                 {slots.map((slot) => (
                   <div
                     key={slot.day + slot.date}
-                    className="flex items-center gap-4 p-4 border border-ocher/15 bg-ink-950/50"
+                    className="flex items-center gap-4 p-4 rounded-xl bg-stone-950/50 border border-stone-800"
                   >
                     <div className="text-center shrink-0 w-14">
-                      <div className="text-xs text-muted-400 uppercase tracking-wider">
+                      <div className="text-xs text-stone-500 uppercase">
                         {slot.day}
                       </div>
-                      <div className="font-display text-xl text-bone-100 tracking-tightest">
+                      <div className="font-serif text-xl text-stone-200">
                         {slot.date}
                       </div>
                     </div>
@@ -131,10 +132,10 @@ export function Contact() {
                         <button
                           key={time}
                           onClick={() => setSelectedSlot(`${slot.day} ${slot.date} ${time}`)}
-                          className={`px-3 py-1.5 text-sm transition-all rounded-[4px] ${
+                          className={`px-3 py-1.5 rounded-lg text-sm transition-all ${
                             selectedSlot === `${slot.day} ${slot.date} ${time}`
-                              ? 'bg-ocher text-ink-950 font-medium'
-                              : 'border border-ocher/20 text-muted-300 hover:border-ocher/50 hover:text-bone-100'
+                              ? 'bg-clay-600 text-white'
+                              : 'bg-stone-800 text-stone-300 hover:bg-stone-700'
                           }`}
                         >
                           {time}
@@ -146,7 +147,7 @@ export function Contact() {
                 <button
                   onClick={handleBooking}
                   disabled={!selectedSlot}
-                  className="w-full mt-4 bg-bone-100 text-ink-950 hover:bg-bone-200 disabled:bg-ink-800 disabled:text-muted-400 py-3.5 rounded-[6px] font-medium transition-colors flex items-center justify-center gap-2"
+                  className="w-full mt-4 bg-clay-600 hover:bg-clay-500 disabled:bg-stone-800 disabled:text-stone-600 text-white py-3.5 rounded-full font-medium transition-colors flex items-center justify-center gap-2"
                 >
                   <Clock size={18} />
                   {selectedSlot
@@ -159,21 +160,22 @@ export function Contact() {
 
           {/* Contact form */}
           <div>
-            <h3 className="font-display text-lg text-bone-100 mb-2 tracking-tightest font-medium">
+            <h3 className="font-serif text-xl text-stone-100 mb-2 flex items-center gap-2">
+              <Mail size={20} className="text-clay-400" />
               Nachricht senden
             </h3>
-            <p className="text-sm text-muted-400 mb-6">
+            <p className="text-sm text-stone-500 mb-6">
               Schreiben Sie mir direkt – ich antworte in der Regel innerhalb von
               48 Stunden.
             </p>
 
             {sent ? (
-              <div className="border border-ocher/30 bg-ink-950/60 p-8 text-center">
-                <CheckCircle2 className="text-ocher mx-auto mb-4" size={32} />
-                <p className="text-bone-100 font-medium">
+              <div className="bg-sage-950/40 border border-sage-800/50 rounded-xl p-8 text-center">
+                <CheckCircle2 className="text-sage-400 mx-auto mb-4" size={40} />
+                <p className="text-stone-200 font-medium">
                   Nachricht gesendet!
                 </p>
-                <p className="text-sm text-muted-300 mt-2">
+                <p className="text-sm text-stone-400 mt-2">
                   Vielen Dank. Melanie meldet sich bei Ihnen.
                 </p>
                 <button
@@ -188,7 +190,7 @@ export function Contact() {
                       message: '',
                     });
                   }}
-                  className="mt-6 text-sm text-ocher hover:text-ocher/80 transition-colors"
+                  className="mt-6 text-sm text-clay-400 hover:text-clay-300 transition-colors"
                 >
                   Weitere Nachricht senden
                 </button>
@@ -197,14 +199,14 @@ export function Contact() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm text-muted-300 mb-1.5 block">
+                    <label className="text-sm text-stone-400 mb-1.5 block">
                       Name *
                     </label>
                     <input
                       type="text"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full bg-ink-950/60 border border-ocher/20 focus:border-ocher rounded-[6px] px-4 py-2.5 text-bone-100 text-sm outline-none transition-colors"
+                      className="w-full bg-stone-950/60 border border-stone-700 focus:border-clay-500 rounded-lg px-4 py-2.5 text-stone-200 text-sm outline-none transition-colors"
                       placeholder="Ihr Name"
                     />
                     {errors.name && (
@@ -212,14 +214,14 @@ export function Contact() {
                     )}
                   </div>
                   <div>
-                    <label className="text-sm text-muted-300 mb-1.5 block">
+                    <label className="text-sm text-stone-400 mb-1.5 block">
                       E-Mail *
                     </label>
                     <input
                       type="email"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full bg-ink-950/60 border border-ocher/20 focus:border-ocher rounded-[6px] px-4 py-2.5 text-bone-100 text-sm outline-none transition-colors"
+                      className="w-full bg-stone-950/60 border border-stone-700 focus:border-clay-500 rounded-lg px-4 py-2.5 text-stone-200 text-sm outline-none transition-colors"
                       placeholder="ihre@email.de"
                     />
                     {errors.email && (
@@ -229,38 +231,38 @@ export function Contact() {
                 </div>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm text-muted-300 mb-1.5 block">
+                    <label className="text-sm text-stone-400 mb-1.5 block">
                       Telefon
                     </label>
                     <input
                       type="tel"
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      className="w-full bg-ink-950/60 border border-ocher/20 focus:border-ocher rounded-[6px] px-4 py-2.5 text-bone-100 text-sm outline-none transition-colors"
+                      className="w-full bg-stone-950/60 border border-stone-700 focus:border-clay-500 rounded-lg px-4 py-2.5 text-stone-200 text-sm outline-none transition-colors"
                       placeholder="optional"
                     />
                   </div>
                   <div>
-                    <label className="text-sm text-muted-300 mb-1.5 block">
+                    <label className="text-sm text-stone-400 mb-1.5 block">
                       Organisation
                     </label>
                     <input
                       type="text"
                       value={form.org}
                       onChange={(e) => setForm({ ...form, org: e.target.value })}
-                      className="w-full bg-ink-950/60 border border-ocher/20 focus:border-ocher rounded-[6px] px-4 py-2.5 text-bone-100 text-sm outline-none transition-colors"
+                      className="w-full bg-stone-950/60 border border-stone-700 focus:border-clay-500 rounded-lg px-4 py-2.5 text-stone-200 text-sm outline-none transition-colors"
                       placeholder="optional"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="text-sm text-muted-300 mb-1.5 block">
+                  <label className="text-sm text-stone-400 mb-1.5 block">
                     Anliegen
                   </label>
                   <select
                     value={form.topic}
                     onChange={(e) => setForm({ ...form, topic: e.target.value })}
-                    className="w-full bg-ink-950/60 border border-ocher/20 focus:border-ocher rounded-[6px] px-4 py-2.5 text-bone-100 text-sm outline-none transition-colors"
+                    className="w-full bg-stone-950/60 border border-stone-700 focus:border-clay-500 rounded-lg px-4 py-2.5 text-stone-200 text-sm outline-none transition-colors"
                   >
                     {topics.map((t) => (
                       <option key={t} value={t}>
@@ -270,14 +272,14 @@ export function Contact() {
                   </select>
                 </div>
                 <div>
-                  <label className="text-sm text-muted-300 mb-1.5 block">
+                  <label className="text-sm text-stone-400 mb-1.5 block">
                     Nachricht *
                   </label>
                   <textarea
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     rows={4}
-                    className="w-full bg-ink-950/60 border border-ocher/20 focus:border-ocher rounded-[6px] px-4 py-2.5 text-bone-100 text-sm outline-none transition-colors resize-none"
+                    className="w-full bg-stone-950/60 border border-stone-700 focus:border-clay-500 rounded-lg px-4 py-2.5 text-stone-200 text-sm outline-none transition-colors resize-none"
                     placeholder="Was beschäftigt Sie?"
                   />
                   {errors.message && (
@@ -286,7 +288,7 @@ export function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-bone-100 text-ink-950 hover:bg-bone-200 py-3.5 rounded-[6px] font-medium transition-colors"
+                  className="w-full bg-clay-600 hover:bg-clay-500 text-white py-3.5 rounded-full font-medium transition-colors"
                 >
                   Nachricht senden
                 </button>
@@ -296,26 +298,26 @@ export function Contact() {
         </div>
 
         {/* Contact details */}
-        <div className="mt-16 grid sm:grid-cols-3 gap-6 pt-8 border-t border-ocher/15">
-          <div className="flex items-center gap-3 text-muted-300">
-            <MapPin className="text-ocher shrink-0" size={18} />
+        <div className="mt-16 grid sm:grid-cols-3 gap-6">
+          <div className="flex items-center gap-3 text-stone-400">
+            <MapPin className="text-clay-400 shrink-0" size={20} />
             <div>
-              <p className="text-sm text-bone-100">Köln</p>
-              <p className="text-xs text-muted-400">50931 / 50935</p>
+              <p className="text-sm text-stone-300">Köln</p>
+              <p className="text-xs text-stone-600">50931 / 50935</p>
             </div>
           </div>
-          <div className="flex items-center gap-3 text-muted-300">
-            <Mail className="text-ocher shrink-0" size={18} />
+          <div className="flex items-center gap-3 text-stone-400">
+            <Mail className="text-clay-400 shrink-0" size={20} />
             <div>
-              <p className="text-sm text-bone-100">info@melanie-eberhard.de</p>
-              <p className="text-xs text-muted-400">B2B: Training@melanie-eberhard.de</p>
+              <p className="text-sm text-stone-300">info@melanie-eberhard.de</p>
+              <p className="text-xs text-stone-600">B2B: Training@melanie-eberhard.de</p>
             </div>
           </div>
-          <div className="flex items-center gap-3 text-muted-300">
-            <Linkedin className="text-ocher shrink-0" size={18} />
+          <div className="flex items-center gap-3 text-stone-400">
+            <Linkedin className="text-clay-400 shrink-0" size={20} />
             <div>
-              <p className="text-sm text-bone-100">LinkedIn</p>
-              <p className="text-xs text-muted-400">Profil folgt</p>
+              <p className="text-sm text-stone-300">LinkedIn</p>
+              <p className="text-xs text-stone-600">Profil folgt</p>
             </div>
           </div>
         </div>

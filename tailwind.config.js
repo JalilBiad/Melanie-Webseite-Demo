@@ -4,41 +4,57 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: {
-          DEFAULT: '#0D1A1C',
-          950: '#0D1A1C',
-          900: '#14262A',
-          800: '#1C3237',
+        stone: {
+          950: '#1a1816',
         },
-        bone: {
-          DEFAULT: '#EDEAE3',
-          100: '#EDEAE3',
-          200: '#D8D4CB',
+        clay: {
+          50: '#fbf6f1',
+          100: '#f5ebe0',
+          200: '#ead5c0',
+          300: '#dcb89a',
+          400: '#c99368',
+          500: '#b8764a',
+          600: '#a35d3a',
+          700: '#844a30',
+          800: '#6b3d2b',
+          900: '#573327',
+          950: '#3d2419',
         },
-        muted: {
-          DEFAULT: '#93A5A3',
-          300: '#93A5A3',
-          400: '#7A8C8A',
+        sage: {
+          50: '#f4f7f3',
+          100: '#e6ede3',
+          200: '#cedbc8',
+          300: '#aac0a2',
+          400: '#84a078',
+          500: '#658460',
+          600: '#4f6a4b',
+          700: '#3f553d',
+          800: '#344432',
+          900: '#2c392b',
+          950: '#1a221a',
         },
-        ocher: {
-          DEFAULT: '#D9A441',
-          400: '#D9A441',
-          500: '#C2923A',
-          600: '#A87C30',
+        amber: {
+          50: '#fef9ee',
+          100: '#fbecc8',
+          200: '#f6d78c',
+          300: '#f0bb50',
+          400: '#ea9f2a',
+          500: '#d4811a',
+          600: '#b86314',
+          700: '#944a16',
+          800: '#7a3c17',
+          900: '#663217',
+          950: '#3c1b09',
         },
       },
       fontFamily: {
-        display: ['"Familjen Grotesk"', 'system-ui', 'sans-serif'],
+        serif: ['"Fraunces"', 'Georgia', 'serif'],
         sans: ['"Inter"', 'system-ui', 'sans-serif'],
-      },
-      letterSpacing: {
-        tightest: '-0.02em',
       },
       animation: {
         'fade-in': 'fadeIn 0.8s ease-out forwards',
         'fade-in-up': 'fadeInUp 0.7s ease-out forwards',
         'slide-in': 'slideIn 0.5s ease-out forwards',
-        'resonance': 'resonance 6s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -46,16 +62,12 @@ export default {
           '100%': { opacity: '1' },
         },
         fadeInUp: {
-          '0%': { opacity: '0', transform: 'translateY(24px)' },
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         slideIn: {
           '0%': { opacity: '0', transform: 'translateX(20px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
-        },
-        resonance: {
-          '0%, 100%': { transform: 'scaleY(1)' },
-          '50%': { transform: 'scaleY(1.6)' },
         },
       },
     },
