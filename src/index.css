@@ -7,10 +7,10 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-stone-50 text-stone-700 font-sans antialiased;
+    @apply bg-stone-950 text-stone-200 font-sans antialiased;
   }
   ::selection {
-    @apply bg-clay-500/30 text-stone-900;
+    @apply bg-clay-500/30 text-white;
   }
 }
 
@@ -38,12 +38,12 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f5f1ec;
+  background: #1a1816;
 }
 ::-webkit-scrollbar-thumb {
-  background: #dcb89a;
+  background: #573327;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #c99368;
+  background: #6b3d2b;
 }
