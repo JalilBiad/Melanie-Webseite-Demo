@@ -31,14 +31,14 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-stone-950/90 backdrop-blur-md border-b border-clay-900/40 py-3'
+          ? 'bg-stone-50/90 backdrop-blur-md border-b border-clay-200/60 py-3'
           : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <button
           onClick={() => handleNav('#hero')}
-          className="font-serif text-xl text-stone-100 tracking-tight"
+          className="font-serif text-xl text-stone-800 tracking-tight"
         >
           Melanie Eberhard
         </button>
@@ -48,7 +48,7 @@ export function Header() {
             <button
               key={link.href}
               onClick={() => handleNav(link.href)}
-              className="text-sm text-stone-300 hover:text-clay-300 transition-colors duration-200"
+              className="text-sm text-stone-600 hover:text-clay-600 transition-colors duration-200"
             >
               {link.label}
             </button>
@@ -62,7 +62,7 @@ export function Header() {
         </nav>
 
         <button
-          className="lg:hidden text-stone-200"
+          className="lg:hidden text-stone-700"
           onClick={() => setOpen(!open)}
           aria-label="Menü"
         >
@@ -71,12 +71,12 @@ export function Header() {
       </div>
 
       {open && (
-        <nav className="lg:hidden bg-stone-950/95 backdrop-blur-md border-t border-clay-900/40 px-6 py-6 flex flex-col gap-4">
+        <nav className="lg:hidden bg-stone-50/95 backdrop-blur-md border-t border-clay-200/60 px-6 py-6 flex flex-col gap-4">
           {navLinks.map((link) => (
             <button
               key={link.href}
               onClick={() => handleNav(link.href)}
-              className="text-left text-stone-300 hover:text-clay-300 transition-colors"
+              className="text-left text-stone-700 hover:text-clay-600 transition-colors"
             >
               {link.label}
             </button>

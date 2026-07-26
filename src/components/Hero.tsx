@@ -19,23 +19,23 @@ export function Hero() {
           backgroundPosition: 'center',
         }}
       />
-      <div className="absolute inset-0 z-10 bg-gradient-to-r from-stone-950 via-stone-950/85 to-stone-950/40" />
-      <div className="absolute inset-0 z-10 bg-gradient-to-t from-stone-950 via-transparent to-stone-950/60" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-r from-stone-50 via-stone-50/85 to-stone-50/30" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-t from-stone-50 via-transparent to-stone-50/40" />
 
       <div className="relative z-20 max-w-7xl mx-auto px-6 pt-32 pb-20 w-full">
         <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 text-clay-300 text-sm mb-6 animate-fade-in">
+          <div className="inline-flex items-center gap-2 text-clay-600 text-sm mb-6 animate-fade-in">
             <Sparkles size={16} />
             <span className="tracking-wide uppercase text-xs">
               Coaching · Mediation · Führungsentwicklung
             </span>
           </div>
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-stone-100 leading-[1.1] mb-6 animate-fade-in-up text-balance">
+          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-stone-900 leading-[1.1] mb-6 animate-fade-in-up text-balance">
             Klar in die Führung.
             <br />
-            <span className="text-clay-300">Stimmig im Leben.</span>
+            <span className="text-clay-600">Stimmig im Leben.</span>
           </h1>
-          <p className="text-lg text-stone-300 leading-relaxed mb-10 max-w-xl animate-fade-in-up">
+          <p className="text-lg text-stone-600 leading-relaxed mb-10 max-w-xl animate-fade-in-up">
             Coaching, Mediation & Führungsentwicklung für Menschen und
             Organisationen, die wirklich weitergehen wollen.
           </p>
@@ -49,7 +49,7 @@ export function Hero() {
             </button>
             <button
               onClick={() => scrollTo('#angebote')}
-              className="border border-stone-600 hover:border-clay-400 text-stone-200 hover:text-clay-300 px-7 py-3.5 rounded-full font-medium transition-all duration-200"
+              className="border border-stone-300 hover:border-clay-400 text-stone-700 hover:text-clay-600 px-7 py-3.5 rounded-full font-medium transition-all duration-200"
             >
               Angebote entdecken
             </button>
@@ -58,7 +58,7 @@ export function Hero() {
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:block">
-        <div className="w-px h-16 bg-gradient-to-b from-transparent via-clay-500/60 to-transparent animate-pulse" />
+        <div className="w-px h-16 bg-gradient-to-b from-transparent via-clay-400/60 to-transparent animate-pulse" />
       </div>
     </section>
   );

@@ -7,27 +7,27 @@ export function Philosophy() {
   return (
     <section
       id="philosophie"
-      className="py-24 lg:py-32 bg-gradient-to-b from-clay-950/60 via-stone-950 to-stone-950 relative overflow-hidden"
+      className="py-24 lg:py-32 bg-gradient-to-b from-clay-50 via-stone-50 to-stone-50 relative overflow-hidden"
     >
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-clay-600 blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-sage-700 blur-[120px]" />
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-clay-200 blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-sage-200 blur-[120px]" />
       </div>
 
       <div
         ref={ref}
         className={`reveal ${visible ? 'is-visible' : ''} relative max-w-4xl mx-auto px-6 text-center`}
       >
-        <div className="inline-flex items-center gap-3 text-clay-300 mb-8">
+        <div className="inline-flex items-center gap-3 text-clay-600 mb-8">
           <AudioLines size={28} />
           <span className="text-sm uppercase tracking-wider">Philosophie</span>
         </div>
 
-        <h2 className="font-serif text-3xl lg:text-5xl text-stone-100 leading-tight mb-10 text-balance">
+        <h2 className="font-serif text-3xl lg:text-5xl text-stone-800 leading-tight mb-10 text-balance">
           Die Stimme als Kompass innerer Stimmigkeit
         </h2>
 
-        <div className="space-y-6 text-stone-300 leading-relaxed text-lg max-w-3xl mx-auto">
+        <div className="space-y-6 text-stone-600 leading-relaxed text-lg max-w-3xl mx-auto">
           <p>
             Zunächst lag der Schwerpunkt in der Stimmearbeit auf dem musikalischen
             Gestalten im Circle Singing und der Vokalimprovisation. Zunehmend rückt
@@ -43,8 +43,8 @@ export function Philosophy() {
           </p>
         </div>
 
-        <div className="mt-14 p-8 rounded-2xl bg-stone-900/60 border border-clay-900/40">
-          <p className="font-serif text-2xl lg:text-3xl text-clay-200 italic">
+        <div className="mt-14 p-8 rounded-2xl bg-white/70 border border-clay-200">
+          <p className="font-serif text-2xl lg:text-3xl text-clay-700 italic">
             „Wer keinen Mut hat zum Träumen, hat keine Kraft zum Kämpfen."
           </p>
         </div>
