@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useReveal } from '@/hooks/useReveal';
 import { testimonials } from '@/data/content';
-import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Petal } from '@/components/Petal';
 
 export function Testimonials() {
   const { ref, visible } = useReveal<HTMLDivElement>();
@@ -20,16 +21,16 @@ export function Testimonials() {
   }, [next]);
 
   return (
-    <section id="stimmen" className="py-24 lg:py-32 bg-stone-950">
+    <section id="stimmen" className="py-28 lg:py-36 bg-paper-50 relative">
       <div className="max-w-7xl mx-auto px-6">
         <div
           ref={ref}
           className={`reveal ${visible ? 'is-visible' : ''} text-center mb-16`}
         >
-          <p className="text-clay-400 text-sm uppercase tracking-wider mb-4">
+          <p className="text-leaf-500 text-sm uppercase tracking-[0.2em] mb-5">
             Stimmen
           </p>
-          <h2 className="font-serif text-3xl lg:text-4xl text-stone-100 max-w-2xl mx-auto leading-tight">
+          <h2 className="font-display text-4xl lg:text-5xl text-moss-800 font-light max-w-2xl mx-auto leading-[1.15] text-balance">
             Was Menschen über die Zusammenarbeit sagen
           </h2>
         </div>
@@ -43,12 +44,15 @@ export function Testimonials() {
               {testimonials.map((t) => (
                 <div key={t.name} className="w-full shrink-0 px-4">
                   <div className="text-center">
-                    <Quote className="text-clay-600 mx-auto mb-6" size={40} />
-                    <p className="font-serif text-xl lg:text-2xl text-stone-200 leading-relaxed mb-8 italic">
+                    <Petal
+                      size={40}
+                      className="text-blossom-400 mx-auto mb-6"
+                    />
+                    <p className="font-display text-2xl lg:text-3xl text-moss-800 leading-relaxed mb-8 italic font-light text-balance">
                       „{t.quote}"
                     </p>
-                    <p className="text-clay-300 font-medium">{t.name}</p>
-                    <p className="text-sm text-stone-500 mt-1">{t.role}</p>
+                    <p className="text-leaf-500 font-medium">{t.name}</p>
+                    <p className="text-sm text-muted mt-1 font-light">{t.role}</p>
                   </div>
                 </div>
               ))}
@@ -57,14 +61,14 @@ export function Testimonials() {
 
           <button
             onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-6 text-stone-600 hover:text-clay-300 transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-6 text-muted hover:text-leaf-500 transition-colors duration-300"
             aria-label="Vorheriges Zitat"
           >
             <ChevronLeft size={32} />
           </button>
           <button
             onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-6 text-stone-600 hover:text-clay-300 transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-6 text-muted hover:text-leaf-500 transition-colors duration-300"
             aria-label="Nächstes Zitat"
           >
             <ChevronRight size={32} />
@@ -78,15 +82,15 @@ export function Testimonials() {
               onClick={() => setCurrent(i)}
               className={`h-2 rounded-full transition-all duration-300 ${
                 i === current
-                  ? 'w-8 bg-clay-500'
-                  : 'w-2 bg-stone-700 hover:bg-stone-600'
+                  ? 'w-8 bg-leaf-500'
+                  : 'w-2 bg-sage-300 hover:bg-sage-400'
               }`}
               aria-label={`Zitat ${i + 1}`}
             />
           ))}
         </div>
 
-        <p className="text-center text-xs text-stone-600 mt-10">
+        <p className="text-center text-xs text-muted mt-10 font-light">
           Hinweis: Diese Kundenstimmen sind Demo-Inhalte und werden später durch
           echte Referenzen ersetzt.
         </p>

@@ -29,16 +29,16 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         scrolled
-          ? 'bg-stone-950/90 backdrop-blur-md border-b border-clay-900/40 py-3'
+          ? 'bg-paper-50/85 backdrop-blur-md border-b border-sage-200 py-3'
           : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <button
           onClick={() => handleNav('#hero')}
-          className="font-serif text-xl text-stone-100 tracking-tight"
+          className="font-display text-2xl text-moss-800 tracking-tight font-light"
         >
           Melanie Eberhard
         </button>
@@ -48,21 +48,21 @@ export function Header() {
             <button
               key={link.href}
               onClick={() => handleNav(link.href)}
-              className="text-sm text-stone-300 hover:text-clay-300 transition-colors duration-200"
+              className="text-sm text-muted hover:text-leaf-500 transition-colors duration-300"
             >
               {link.label}
             </button>
           ))}
           <button
             onClick={() => handleNav('#kontakt')}
-            className="text-sm bg-clay-600 hover:bg-clay-500 text-white px-5 py-2.5 rounded-full transition-colors duration-200"
+            className="text-sm bg-leaf-500 hover:bg-leaf-400 text-paper-50 px-5 py-2.5 rounded-full transition-colors duration-300"
           >
             Kennenlerngespräch
           </button>
         </nav>
 
         <button
-          className="lg:hidden text-stone-200"
+          className="lg:hidden text-moss-800"
           onClick={() => setOpen(!open)}
           aria-label="Menü"
         >
@@ -71,19 +71,19 @@ export function Header() {
       </div>
 
       {open && (
-        <nav className="lg:hidden bg-stone-950/95 backdrop-blur-md border-t border-clay-900/40 px-6 py-6 flex flex-col gap-4">
+        <nav className="lg:hidden bg-paper-50/95 backdrop-blur-md border-t border-sage-200 px-6 py-6 flex flex-col gap-4">
           {navLinks.map((link) => (
             <button
               key={link.href}
               onClick={() => handleNav(link.href)}
-              className="text-left text-stone-300 hover:text-clay-300 transition-colors"
+              className="text-left text-muted hover:text-leaf-500 transition-colors duration-300"
             >
               {link.label}
             </button>
           ))}
           <button
             onClick={() => handleNav('#kontakt')}
-            className="text-center bg-clay-600 hover:bg-clay-500 text-white px-5 py-2.5 rounded-full transition-colors"
+            className="text-center bg-leaf-500 hover:bg-leaf-400 text-paper-50 px-5 py-2.5 rounded-full transition-colors duration-300"
           >
             Kennenlerngespräch
           </button>
