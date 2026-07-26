@@ -7,10 +7,10 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-stone-950 text-stone-200 font-sans antialiased;
+    @apply bg-cream-50 text-sand-800 font-sans antialiased;
   }
   ::selection {
-    @apply bg-clay-500/30 text-white;
+    @apply bg-sage-300/40 text-sage-900;
   }
 }
 
@@ -20,8 +20,8 @@
   }
   .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   }
   .reveal.is-visible {
     opacity: 1;
@@ -35,15 +35,16 @@
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #1a1816;
+  background: #f5f0e6;
 }
 ::-webkit-scrollbar-thumb {
-  background: #573327;
-  border-radius: 4px;
+  background: #c7b394;
+  border-radius: 6px;
+  border: 2px solid #f5f0e6;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #6b3d2b;
+  background: #b59a76;
 }
